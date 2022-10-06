@@ -6,4 +6,4 @@ class DataFormatting:
         return int(data.text.split(" ")[0].replace(".", ""))
 
     def percentage(self, data):
-        return float(data.text.split("%")[0].replace(",", "."))
+        return float("{:.4f}".format(float(data.text.split("%")[0].replace(",", ".")) / 100))
