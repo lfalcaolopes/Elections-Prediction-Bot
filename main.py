@@ -14,13 +14,10 @@ driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()), opti
 confirmations = WebsiteConfirmation(driver)
 formatting = DataFormatting()
 
-statesx = {"ac": 455903, "al": 1805971, "ap": 442842, "am": 2113551, "ba": 8874841, "df": 1819900, "es": 2315889,
-          "zz": 304032, "go": 3812597, "ma": 3920435, "mt": 1892180, "ms": 1555149, "mg": 12655228, "pr": 6828543,
-          "pb": 2557479, "pa": 4789311, "pe": 5738371, "pi": 2115645, "rj": 9909463, "rn": 2090604, "rs": 6890016,
-          "ro": 926827, "rr": 305404, "sc": 4487474, "se": 1364724, "sp": 27189714, "to": 891449}
-
-states = {"ac": 455903, "al": 1805971}
-
+states = {"ac": 455903, "al": 1805971, "ap": 442842, "am": 2113551, "ba": 8874841, "ce": 5628610, "df": 1819900,
+          "es": 2315889, "zz": 304032, "go": 3812597, "ma": 3920435, "mt": 1892180, "ms": 1555149, "mg": 12655228,
+          "pr": 6828543, "pb": 2557479, "pa": 4789311, "pe": 5738371, "pi": 2115645, "rj": 9909463, "rn": 2090604,
+          "rs": 6890016, "ro": 926827, "rr": 305404, "sc": 4487474, "se": 1364724, "sp": 27189714, "to": 891449}
 
 
 driver.get("https://resultados.tse.jus.br/oficial/app/index.html#/m/eleicao/resultados")
@@ -53,16 +50,12 @@ for state, state_votes in states.items():
     else:
         print("something went wrong")
 
-    # print("lula", lula_percentage, "bolso", bolsonaro_percentage)
-
     lula_total_votes += int(state_votes * lula_percentage)
     bolsonaro_total_votes += int(state_votes * bolsonaro_percentage)
     total_votes += state_votes
 
-lula_total_percentage = str((lula_total_votes / total_votes) * 100) + "%"
-bolsonaro_total_percentage = str(bolsonaro_total_votes / total_votes * 100) + "%"
+lula_total_percentage = str(formatting.setDecimals((lula_total_votes / total_votes) * 100, 2)) + "%"
+bolsonaro_total_percentage = str(formatting.setDecimals(bolsonaro_total_votes / total_votes * 100, 2)) + "%"
 
-print("lula", lula_total_votes, "bolsonaro", bolsonaro_total_votes)
+print("lula", formatting.thousands(lula_total_votes), "bolsonaro", formatting.thousands(bolsonaro_total_votes))
 print("lula", lula_total_percentage, "bolsonaro", bolsonaro_total_percentage)
-
-# sections_percentage = driver.find_element(By.CSS_SELECTOR, "div[class = 'flex flex-row items-center']")
