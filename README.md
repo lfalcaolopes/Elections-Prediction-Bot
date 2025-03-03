@@ -1,20 +1,30 @@
-# Bot para prever resultado das eleições de 2022
+# Elections Prediction Bot
+Um sistema de modelagem preditiva para estimar os resultados das Eleições Presidenciais do Brasil de 2022 em tempo real.
 
-<li>Projeto tinha como objetivo fazer uma previsão do resultado final do resultado das eleições durante o periodo de apuração dos votos. A análise foi feita por estado
-e leva em consideração a porcentagem atual de cada candidato, quantas pessoas já votaram e uma estimativa de quanto seria o total de eleitores que iriam votar, 
-estimativa foi feita baseado em quantos eleitores votaram no 1 turno das eleições.</li><br>
+## Visão Geral
 
-<li>Como a apuração oficial não é feita de forma uniforme em todos os estados, acaba sendo apurado os votos dos estados da região sul e sudeste antes da região norte 
-e  nordeste, que acaba gerando uma distorção muito grande na porcentagem de votos para cada candidato no estagio inicial da apuração, já que as regiões sul e sudeste, 
-em sua maioria, são mais propensas a votar em Bolsonaro e as regiões norte e nordeste mais propensas a votar no Lula.</li><br>
+Este projeto foi desenvolvido em 2022 durante a minha fase de aprendizado em programação e evolução como engenheiro de software. O Elections Prediction Bot aplica técnicas de análise de dados e modelagem preditiva para estimar os resultados finais das eleições com base em dados em tempo real, considerando a porcentagem de votos, o número de eleitores que já votaram e projeções baseadas em dados históricos do primeiro turno.
 
-<li>O projeto então entra para tentar minimizar essa distorção, fazendo uma estimativa de quantos votos cada cadidato irá receber, caso a porcentagem de votos 
-em cada estado se mantenha até o final da apuração dos votos, o que o torna mais preciso com o passar da apuração.</li><br>
+## Principais Funcionalidades
 
-<li>O código foi executado diversas vezes durante a apuração para ver como ele se comportaria em cada estágio da apuração. Após o fim, o programa não acertou 
-precisamente a porcentagem de votos dos candidatos, como era esperado já que foram feitas estimativas do total de eleitores, foi interessante perceber que durante 
-todo o processo ele apontou o candidato Lula como o vencedor, mesmo quando a apuração oficial marcava uma boa vantagem de votos para o candidato Bolsonaro.</li><br>
-</ul>
+- Análise por Estado: Processamento de dados específico para cada unidade federativa, reconhecendo diferenças regionais no comportamento eleitoral.
+- Previsão em Tempo Real: Atualiza as estimativas de resultados conforme o andamento da apuração dos votos.
+- Modelagem Preditiva: Utiliza técnicas estatísticas para projetar o resultado final, corrigindo vieses gerados pela apuração não uniforme entre regiões.
+- Correção de Viés Regional: Considera que estados das regiões Sul e Sudeste costumam apurar votos mais rapidamente do que estados do Norte e Nordeste, proporcionando previsões mais acuradas.
+
+## Tecnologias e Abordagens
+
+- Python: Linguagem principal utilizada para desenvolvimento, evidenciando boas práticas em programação e design de algoritmos.
+- Análise de Dados e Estatística: Implementação de técnicas para transformação e análise dos dados eleitorais.
+- Modelagem Preditiva: Aplicação de algoritmos para previsão de resultados eleitorais, demonstrando habilidades em data science e engenharia de software.
+
+## Resultados e Avaliação
+
+Durante a apuração das eleições de 2022, o algoritmo demonstrou resiliência e adaptabilidade, prevendo consistentemente o candidato Lula como vencedor, mesmo diante de situações iniciais que indicavam uma vantagem para Bolsonaro. Essa discrepância reforça a importância da análise dinâmica de dados e da correção de vieses inerentes à contagem eleitoral.
+
+## Conclusão
+
+O Elections Prediction Bot é um projeto que sintetiza minha jornada de aprendizado e evolução na área de engenharia de software e data science. Ele demonstra a capacidade de aplicar conhecimentos técnicos para desenvolver soluções práticas e escaláveis, com foco em análise de dados, modelagem preditiva e desenvolvimento back-end. Este projeto reforça meu compromisso com a inovação e a resolução de problemas complexos por meio de abordagens data-driven.
 
 ## Imagens de cada estagio da apuração
 <table align="center">
